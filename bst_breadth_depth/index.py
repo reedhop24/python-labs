@@ -25,32 +25,37 @@ def inorder(root):
         print(root.val)
         inorder(root.right)
 
-r = Node(50)
-insert(r,Node(20))
-insert(r,Node(60))
-insert(r,Node(30))
-insert(r,Node(70))
-insert(r,Node(10))
-insert(r,Node(90))
+def preorder(root):
+    if root:
+        inorder(root.right)
+        print(root.val)
+        inorder(root.left)
 
-print(inorder(r))
+r = Node(6)
+insert(r,Node(3))
+insert(r,Node(7))
+insert(r,Node(4))
+insert(r,Node(5))
+insert(r,Node(8))
+insert(r,Node(2))
+
+
+# print(inorder(r))
+print(preorder(r))
 
 def bfs(root):
     if root is None:
         return -1
-
     queue = []
     queue.append(root)
 
     while(len(queue) > 0):
-        print(queue[0].val)
         curr = queue.pop(0)
-
         if curr.left is not None:
             queue.append(curr.left)
         if curr.right is not None:
             queue.append(curr.right)
-
+        
 def dfs(root):
     if root is None:
         return -1
@@ -67,8 +72,8 @@ def dfs(root):
         if curr.right is not None:
             stack.append(curr.right)
 
-print('bfs')
-bfs(r)
+# print('bfs')
+# bfs(r)
 
-print('dfs')
-dfs(r)
+# print('dfs')
+# print(bfs(r))
