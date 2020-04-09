@@ -31,7 +31,7 @@ def inorder(root):
 
 inorder(r)
 
-def isValidBST(self, root: TreeNode) -> bool:
+def isValidBST(self, root):
         if root is None:
             return True
         
